@@ -4,7 +4,7 @@
   "description": "Platzigram REST API",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint && ava"
+    "test": "npm run lint && NODE_ENV=test ava test/**-test.js"
   },
   "ava": {
     "require": [
@@ -47,6 +47,7 @@
     "babel-runtime": "^6.20.0",
     "http-hash": "^2.0.0",
     "micro": "^4.1.1",
+    "request": "^2.79.0",
     "request-promise": "^4.1.1",
     "uuid-base62": "^0.1.0"
   }

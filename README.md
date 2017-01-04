@@ -20,3 +20,11 @@ a `~$ npm link`. funciona así:
       ej: `platzigram-api$ npm link platzigram-db`
     3. verificar en la carpeta node_modules si se encuentra el modulo platzigram-db.
 
+Hay una técnica para hacer test de bases de datos, con datos, pero sin ir directamente a la 
+base de datos. Esta técnica me facilita hacer los test sin datos reales e innecesarios.
+Tengo dos formas que son Mocks, objetos para hacer pruebas; y stubs métodos solamente para hacer pruebas.
+
+Hay un módulo llamado Proxyquire, que me sirve para señalar o decirle al js con qué tipo de datos estoy haciendo
+pruebas con Stub.
+
+
