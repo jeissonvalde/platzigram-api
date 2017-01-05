@@ -2,7 +2,7 @@
 
 import { send, json } from 'micro'
 import HttpHash from 'http-hash'
-import Db from './node_modules/platzigram-db'
+import Db from 'platzigram-db'
 import config from './config'
 import DbStub from './test/stub/db'
 
@@ -14,6 +14,21 @@ if (env === 'test') {
 }
 
 const hash = HttpHash()
+
+hash.set('GET /tag/:tag', async function byTag (req, res, params) {
+  let tag = params.tag
+  await db.connect()
+  let images = await db.getImagesByTag(tag)
+  await db.disconnect()
+  send(res, 200, images)
+})
+
+hash.set('GET /list', async function list (req, res, params) {
+  await db.connect()
+  let images = await db.getImages()
+  await db.disconnect()
+  send(res, 200, images)
+})
 
 hash.set('GET /:id', async function getPicture (req, res, params) {
   let id = params.id

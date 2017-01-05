@@ -28,3 +28,21 @@ Hay un módulo llamado Proxyquire, que me sirve para señalar o decirle al js co
 pruebas con Stub.
 
 
+<h2>TÉCNICAS CON EL LINTER</h2>
+    En ocaciones puedo omitir algunas reglas para que el linter pase, y me deje correr el ava,
+    Esto se hace con algunos flags al momento de ejecutar el lint.
+      
+      ej: $ npm run lint -- --verbose // Este double dash le indica a npm que voy a poner flags para standard.
+      Es lo mismo que escribir 
+      $ standard --verbose
+
+    Con esto, me imprime en la terminal las reglas que puedo omitir.
+    Ejemplo, me imprime entre parentesis esto: (no-unused-vars)
+
+    Lo que debo hacer para que el lint pase es ir al archivo con la variable que "existe pero nunca usado"
+      ej:
+
+      import Db from 'platzigram-db' // eslint-disable-line no-unused-vars
+
+    Con esto es suficiente para omitir esta línea de código con standard.
+

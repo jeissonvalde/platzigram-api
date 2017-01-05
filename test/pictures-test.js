@@ -59,3 +59,33 @@ test('POST /:id/like', async t => {
 
   t.deepEqual(body, imageNew)
 })
+
+test('GET /list', async t => {
+  let images = fixtures.getImages()
+  let url = t.context.url
+
+  let options = {
+    method: 'GET',
+    uri: `${url}/list`,
+    json: true
+  }
+
+  let body = await request(options)
+
+  t.deepEqual(body, images)
+})
+
+test('GET /tag/:tag', async t => {
+  let images = fixtures.getImagesByTag()
+  let url = t.context.url
+
+  let options = {
+    method: 'GET',
+    uri: `${url}/tag/awesome`,
+    json: true
+  }
+
+  let body = await request(options)
+
+  t.deepEqual(body, images)
+})
