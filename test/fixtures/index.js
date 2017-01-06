@@ -29,7 +29,7 @@ export default {
   },
 
   getUser () {
-    return  {
+    return {
       id: '876g0sfd6gn0s-09d78fgy0s-09sdf8gy',
       name: 'Freddy Vega',
       username: 'freddier',

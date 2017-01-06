@@ -8,7 +8,7 @@ import fixtures from './fixtures'
 import users from '../users'
 
 test.beforeEach(async t => {
-  let srv = micro(pictures)
+  let srv = micro(users)
   t.context.url = await listen(srv)
 })
 
@@ -33,7 +33,7 @@ test('POST /', async t => {
   delete user.password
 
   let response = await request(options)
-  t.is(respsonse.statusCode, 201)
+  t.is(response.statusCode, 201)
   t.deepEqual(response.body, user)
 })
 

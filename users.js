@@ -18,10 +18,10 @@ const hash = HttpHash()
 hash.set('POST /', async function saveUser (req, res, params) {
   let user = await json(req)
   await db.connect()
-  let user = await db.saveUser(user)
+  let created = await db.saveUser(user)
   await db.disconnect()
 
-  delete created.emai
+  delete created.email
   delete created.password
 
   send(res, 201, created)
