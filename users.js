@@ -1,13 +1,13 @@
 'use strict'
 
-import { send, json } from 'micro'
+import { send, json } from 'micro' // eslint-disable-line no-unused-vars
 import HttpHash from 'http-hash'
 import Db from 'platzigram-db'
 import config from './config'
 import DbStub from './test/stub/db'
 
 const env = process.env.NODE_ENV || 'production'
-let db = new Db(config.db)
+let db = new Db(config.db) // eslint-disable-line no-unused-vars
 
 if (env === 'test') {
   db = new DbStub()
