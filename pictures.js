@@ -34,7 +34,7 @@ hash.set('GET /list', async function list (req, res, params) {
 hash.set('GET /:id', async function getPicture (req, res, params) {
   let id = params.id
   await db.connect()
-  let image = db.getImage(id)
+  let image = await db.getImage(id)
   await db.disconnect()
   send(res, 200, image)
 })
@@ -61,7 +61,7 @@ hash.set('POST /', async function postPicture (req, res, params) {
 hash.set('POST /:id/like', async function likePicture (req, res, params) {
   let id = params.id
   await db.connect()
-  let image = db.likeImage(id)
+  let image = await db.likeImage(id)
   await db.disconnect()
   send(res, 200, image)
 })

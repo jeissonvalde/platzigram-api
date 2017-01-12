@@ -6,7 +6,7 @@ export default {
       userId: 'platzigram123',
       liked: false,
       likes: 0,
-      src: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSNNUvPIFcDcEiB1V-kFFHXr6SQxm7qadyfMctZiBLrQDzm5xfW',
+      src: 'https://platzigram.test/ANd9GcSNNUvPIFiBLrQDzm5xfW.jpg',
       description: '#awesome',
       tags: [ 'awesome' ],
       createdAt: new Date().toString()
